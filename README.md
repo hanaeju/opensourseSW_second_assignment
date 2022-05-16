@@ -34,3 +34,39 @@
 * S : Process Status(작업중, I/O 대기, 유휴 상태 등)
 
 ### VIRT, RES, SHR
+* 현재 Process가 사용하고 있는 Memory
+* VIRT
+  + Process가 사용하고 있는 virtual memory의 전체 용량
+  + Process에 할당된 virtual memory 전체
+  + SWAP + RES
+
+* RES
+  + 현재 Process가 사용하고 있는 물리 메모리의 양
+  + 실제로 memory에 올려서 사용하고 있는 물리적 memory
+  + 실제로 memory를 쓰고있는 RES가 핵심이다.
+
+* SHR
+  + 다른 Process와 공유하고 있는 shared memory의 양
+  + 예시로 라이브러리를 들 수 있음. 대부분의 linux process는 glibc라는 라이브러리를 참고하기에 이런 라이브러리를 shared memory에 올려서 사용
+ 
+ ### Memory Commit
+ * Process가 커널에게 필요한 메모리를 request하면 커널은 프로세스에 메모리 영역을 주고 실제로 할당은 하지 않으나 해당 영역을 process에게 주었다는 것을 save해두는 과정
+ * 왜 커널은 process의 memory request에 따라 즉시 할당하지 않고 Memory Commit과 같은 기술을 사용하여 request를 delay 시키는가?
+   + fork()와 같은 새로운 process를 만들기 위한 call을 처리해야 하기 때문
+   + fork() 시스템 call을 사용하면 커널은 실행중인 process와 동일한 process를 하나 더 만들고, exec() system call을 통해 다른 프로세스로 변함. 이때 확보한 memory가 쓸모 없어질 수 있다.
+   + COW(Copy-On-Write) 기법을 통해 copy된 memory 영역에 실제 write 작업이 발생한 후 실질적인 memory 할당을 진행
+
+### Process Status
+* SHR 옆에 있는 S 항목으로 볼 수 있음
+  + D : Uninterruptiable sleep. disk or network I/O를 대기
+  + R : 실행 중(CPU 자원을 소모)
+  + S : Sleeping, request한 resource를 즉시 사용 가능
+  + T : Traced or Stopped. 보통의 system에서 자주 볼 수 없는 상태
+  + Z : Zombie. 부모 process가 죽은 자식 프로세스
+ 
+ ---
+ 
+ ### 아래의 문서를 참고하여 작성하였습니다.
+ [top] https://zzsza.github.io/development/2018/07/18/linux-top/
+ 
+ 
