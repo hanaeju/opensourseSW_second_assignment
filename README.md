@@ -26,4 +26,11 @@
 ![top -b -n 1](https://user-images.githubusercontent.com/98371516/168509598-a8527ca7-6750-4c7c-8031-b68191ced0f1.PNG)
 
 * 1:41은 1시간 41분 전에 서버가 구동되었음을 의미한다.
-* load average : 현재 시스템이 얼마나 일을 하는 지를 나타냄. 3개의 숫자는 1분,5분, 15분간의 평균 실행/대기 중인 프로세스의 수. CPU Core 수 보다 적으면 문제 없음 
+* load average : 현재 시스템이 얼마나 일을 하는 지를 나타냄. 3개의 숫자는 1분,5분, 15분간의 평균 실행/대기 중인 프로세스의 수. CPU Core 수 보다 적으면 문제 없음
+* Tasks : Process의 개수
+* KiB Mem, Swap : 각 Memory의 사용량
+* PR : 실행 우선 순위
+* VIRT, RES, SHR : Memory 사용량 => 누수 check 가능
+* S : Process Status(작업중, I/O 대기, 유휴 상태 등)
+
+### VIRT, RES, SHR
