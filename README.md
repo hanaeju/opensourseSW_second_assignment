@@ -64,9 +64,10 @@
   + T : Traced or Stopped. 보통의 system에서 자주 볼 수 없는 상태
   + Z : Zombie. 부모 process가 죽은 자식 프로세스
  
- ---
  
  #### 아래의 문서를 참고하여 작성하였습니다.
  [top] https://zzsza.github.io/development/2018/07/18/linux-top/
+ 
+ ---
  
  
