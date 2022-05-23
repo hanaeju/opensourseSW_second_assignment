@@ -1,5 +1,3 @@
-# OpensourceSW_second_assignment
-
 ## top
 * 시스템의 상태를 가장 빠르게 파악 가능하다(CPU, Memory, Process)
 * 옵션 없이 입력하면 interval 간격(기본 3초)으로 화면을 갱신하며 정보를 보여준다.
@@ -72,4 +70,8 @@
  ---
  
  
-## ps
+## process status(ps)
+현재 실행중인 process list와 status를 보여준다.
+OS 계열에 따라 명령어 사용법이 다르며, BSD 계열 option은 '-'(dash)없이 사용
+
+
