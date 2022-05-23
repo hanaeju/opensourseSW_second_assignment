@@ -2,8 +2,8 @@
 * 시스템의 상태를 가장 빠르게 파악 가능하다(CPU, Memory, Process)
 * 옵션 없이 입력하면 interval 간격(기본 3초)으로 화면을 갱신하며 정보를 보여준다.
 * top 실행 전 옵션
-  + 순간의 정보를 확인하려면 ```-b``` 옵션 추가(batch mode)
-  + ```-n``` : top 실행 주기 설정(반복 횟수)
+  + 순간의 정보를 확인하려면 `-b` 옵션 추가(batch mode)
+  + `-n` : top 실행 주기 설정(반복 횟수)
   
 * 실행 후 명령어
   + shift + p : CPU 사용률 내림차순
@@ -19,7 +19,7 @@
   + ps는 ps한 시점에 process에서 검색한 CPU 사용량
   +  top은 process에서 일정 주기로 합산해 CPU 사용률 출력
 
-* ```top -b -n 1```
+* `top -b -n 1`
 
 ![top -b -n 1](https://user-images.githubusercontent.com/98371516/168509598-a8527ca7-6750-4c7c-8031-b68191ced0f1.PNG)
 
@@ -71,7 +71,57 @@
  
  
 ## process status(ps)
-현재 실행중인 process list와 status를 보여준다.
+현재 실행중인 process list와 status를 보여준다.  
 OS 계열에 따라 명령어 사용법이 다르며, BSD 계열 option은 '-'(dash)없이 사용
 
+**How to use ps**
+```
+$ ps [option]
+System V : $ ps -ef
+BSD : $ ps aux
+```
+![ossw](https://user-images.githubusercontent.com/98371516/169723685-da634032-e121-428e-9c57-1fc9a46cad33.PNG)
+
+
+### ps option
+| option | contents |
+|:---:|:---:|
+| -A | writes to standard output information about all process |
+| -a | session leader를 제외하고 terminal에 종속되지 않은 모든 process|
+| -e | writes information to standard output about all process, except kernal processes |
+| -f | full format |
+| -l | long format |
+| -M | shows 64-bit processes |
+| -m | shows kernel threads as well as processes |
+| -p | used to designate a specific PID |
+| -r | shows which processors are currently running |
+| -u | used to check process information of a specific user.</br>if not specified a user, information is output based on the current user |
+| -x | shows processors that are not yet completed while logged in |
+
+
+### ps 항목
+| items | mean |
+|:---:|:---:|
+| USER or UID | BSD or System V계열에서 나타나는 항목으로 process 소유자의 이름 |
+| PID | process ID |
+| PPID | parent process ID |
+| %CPU | CPU 사용 비율의 추정치(BSD) |
+| %MEM | memory 사용 비율의 추정치(BSD) |
+| VSZ | K단위 or page 단위의 virtual memory 사용량 |
+| RSS | 실제 memory 사용량 |
+| TTY | terminal connected with process |
+| S,STAT | System V or BSD계열에서 현재 process의 status code |
+| TIME | 총 CPU 사용 시간 |
+| COMMAND | process의 실행 명령행 |
+| STIME | process start time |
+| C,CP | 짧은 시간동안의 CPU 사용률(C:Sys V, CP:BSD) |
+| PRI | 실제 실행 우선순위 |
+| NI | nice 우선순위 번호 |
+
+
+` $ ps aux ` : 실행 중인 모든 process 확인  
+` $ ps auxfww ` : 실행 중인 process를 트리구조 + 모든 실행 중인 option 확인 가능  
+` $ ps -ef | grep [process name] ` : 해당 process 구동 확인
+
+![psitem](https://user-images.githubusercontent.com/98371516/169727287-c7b80df6-1d05-4fed-aefb-3374f8c64e72.PNG)
 
