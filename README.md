@@ -1,4 +1,3 @@
-# opensourseSW_second_assignment
 
 ## top
 * 시스템의 상태를 가장 빠르게 파악 가능하다(CPU, Memory, Process)
@@ -72,4 +71,4 @@
  ---
  
  
- 
+## ps
