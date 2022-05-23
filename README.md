@@ -125,3 +125,6 @@ BSD : $ ps aux
 
 ![psitem](https://user-images.githubusercontent.com/98371516/169727287-c7b80df6-1d05-4fed-aefb-3374f8c64e72.PNG)
 
+ #### 아래의 문서를 참고하여 작성하였습니다.
+ [ps] https://newstars.cloud/468  
+ [ps] https://jhnyang.tistory.com/268
