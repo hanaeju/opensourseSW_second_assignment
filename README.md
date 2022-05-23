@@ -1,6 +1,6 @@
-## opensourseSW_second_assignment
+# opensourseSW_second_assignment
 
-### top
+## top
 * 시스템의 상태를 가장 빠르게 파악 가능하다(CPU, Memory, Process)
 * 옵션 없이 입력하면 interval 간격(기본 3초)으로 화면을 갱신하며 정보를 보여준다.
 * top 실행 전 옵션
