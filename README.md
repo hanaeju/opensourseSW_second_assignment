@@ -63,10 +63,6 @@
   + Z : Zombie. 부모 process가 죽은 자식 프로세스
  
  
- #### 아래의 문서를 참고하여 작성하였습니다.
- [top] https://zzsza.github.io/development/2018/07/18/linux-top/
- 
- 
  ---
  
  
@@ -125,6 +121,28 @@ BSD : $ ps aux
 
 ![psitem](https://user-images.githubusercontent.com/98371516/169727287-c7b80df6-1d05-4fed-aefb-3374f8c64e72.PNG)
 
- #### 아래의 문서를 참고하여 작성하였습니다.
+---
+## jobs
+### jobs [option][작업번호]
+* backgroud로 실행되는 작업목록(작업번호, 상태, 명령어)을 보여주는 리눅스 명령어
+* 현재 쉘 세션에서 실행시킨 background 작업의 목록이 출력된다.
+* 작업번호는 PID와는 달리, 별도로 부여되는 background 작업목록 상의 번호이다.
+* kill 명령어 뒤에 `%작업번호`를 입력하여 종료시킬 수 있다.
+
+### jobs로 출력되는 background 작업의 status값 
+| status | 설명 |
+|:---:|:---:|
+| Running | 작업이 계속 진행중 |
+| Done | 작업이 완료되어 0을 반환 |
+| Done(code) | 작업이 종료되었으며 0이 아닌 code를 반환 |
+| Stopped | 작업이 일시 중단 |
+| Stopped(SIGTSTP) | SIGTSTP 시그널이 작업을 일시 중단 |
+| Stopped(SIGSTOP) | SIGSTOP 시그널이 작업을 일시 중단 |
+| Stopped(SIGTTIN) | SIGTTIN 시그널이 작업을 일시 중단 |
+| Stopped(SIGTTOU) | SIGTTOU 시그널이 작업을 일시 중단 |
+
+
+#### 아래의 문서를 참고하여 작성하였습니다.
+ [top] https://zzsza.github.io/development/2018/07/18/linux-top/
  [ps] https://newstars.cloud/468  
  [ps] https://jhnyang.tistory.com/268
