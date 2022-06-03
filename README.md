@@ -149,9 +149,28 @@ BSD : $ ps aux
 | -p | 각 process ID에 대해 한 행씩 출력 |
 | command | 지정한 명령어를 실행 |
 
+---
+
+## kill
+* process에 특정한 signal을 보내는 명령어
+* 일반적으로 종료되지 않는 process를 종료시킬 때 많이 사용
+
+### option
+-l : signal의 종류를 출력  
+`$ kill -l`  
+![kill-l](https://user-images.githubusercontent.com/98371516/171783287-1f24073b-f23a-47b7-a7b4-559f461f2aec.PNG)
+
+### 사용 예
+kill [option or signal(number or name)] PID  
+`$ kill [options]<pid>`  
+`$ kill -9 1234`  
+`$ kill -SIGKILL 1234`  
+
+
 
 #### 아래의 문서를 참고하여 작성하였습니다.
- [top] https://zzsza.github.io/development/2018/07/18/linux-top/
+ [top] https://zzsza.github.io/development/2018/07/18/linux-top/  
  [ps] https://newstars.cloud/468  
  [ps] https://jhnyang.tistory.com/268  
  [jobs] https://hbase.tistory.com/265  
+ [kill] https://bigsun84.tistory.com/355  
