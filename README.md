@@ -141,8 +141,17 @@ BSD : $ ps aux
 | Stopped(SIGTTIN) | SIGTTIN 시그널이 작업을 일시 중단 |
 | Stopped(SIGTTOU) | SIGTTOU 시그널이 작업을 일시 중단 |
 
+### option
+| option | 설명 |
+|:---:|:---:|
+| -l | process group ID를 state field 앞에 출력 |
+| -n | process group 중에 대표 process ID를 출력 |
+| -p | 각 process ID에 대해 한 행씩 출력 |
+| command | 지정한 명령어를 실행 |
+
 
 #### 아래의 문서를 참고하여 작성하였습니다.
  [top] https://zzsza.github.io/development/2018/07/18/linux-top/
  [ps] https://newstars.cloud/468  
- [ps] https://jhnyang.tistory.com/268
+ [ps] https://jhnyang.tistory.com/268  
+ [jobs] https://hbase.tistory.com/265  
