@@ -1,3 +1,6 @@
+
+# 1. linux 명령어 조사
+
 ## top
 * 시스템의 상태를 가장 빠르게 파악 가능하다(CPU, Memory, Process)
 * 옵션 없이 입력하면 interval 간격(기본 3초)으로 화면을 갱신하며 정보를 보여준다.
@@ -161,12 +164,41 @@ BSD : $ ps aux
 ![kill-l](https://user-images.githubusercontent.com/98371516/171783287-1f24073b-f23a-47b7-a7b4-559f461f2aec.PNG)
 
 ### 사용 예
-kill [option or signal(number or name)] PID  
+* kill [option or signal(number or name)] PID  
 `$ kill [options]<pid>`  
 `$ kill -9 1234`  
 `$ kill -SIGKILL 1234`  
 
+---
 
+# 2. vim editor macro 사용법
+
+### macro 사용법
+* q <저장할 매크로 문자>
+* 매크로가 저장될 register address로 a ~ z 사용 가능
+ + 편의상 저장한 매크로 문자를 T로 지정함
+
+### macro 기록
+* qT -> 작업 -> q
++ q로 시작해서 q로 끝남
+
+### macro 실행
+* 특정 문자에 저장한 매크로 실행 : @T
+* 매크로 반복 실행 : 반복횟수@T
+* 마지막에 수행한 매크로 실행 : @@
+
+### macro 편집
+* 현재 커서 위치에 기록된 매크로 내용 표시 `"Tp`
+* 출력된 매크로 내용에서 작업 수정/추가 등을 한 후 편집한 내용 다시 등록 `"Tyy`
+
+### macro 저장
+* 작성한 매크로를 저장해서 계속 재사용하고 싶을 때 보통 VIM 설정 파일에 기록해두는 방법을 사용한다.
+* vim 설정 파일 열기 `:e $MYVIMRD`
+* 매크로 내용 표시 `"Tp`
+* 편집. 매크로 내용을 Single Quotation으로 감싸준다. `let @T='출력된 매크로 내용'`
+* 저장 후 변경 설정 다시 읽어들이기 `:so $MYVIMRC`
+
+---
 
 #### 아래의 문서를 참고하여 작성하였습니다.
  [top] https://zzsza.github.io/development/2018/07/18/linux-top/  
@@ -174,3 +206,4 @@ kill [option or signal(number or name)] PID
  [ps] https://jhnyang.tistory.com/268  
  [jobs] https://hbase.tistory.com/265  
  [kill] https://bigsun84.tistory.com/355  
+ [macro] https://tzara.tistory.com/150  
